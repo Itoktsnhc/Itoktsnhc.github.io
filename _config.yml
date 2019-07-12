@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: blog.itok.xyz
 subtitle:
 description:
 keywords:
-author: John Doe
+author: itok
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://blog.itok.xyz
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -81,3 +81,8 @@ deploy:
   type: git
   repo: git@github.com:Itoktsnhc/Itoktsnhc.github.io.git
   branch: master
+
+
+# hexo-graphviz
+graphviz:
+  enable: true
