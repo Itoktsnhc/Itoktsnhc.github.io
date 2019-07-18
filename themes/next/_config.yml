@@ -440,14 +440,14 @@ gitment:
 needmoreshare2:
   enable: false
   postbottom:
-    enable: false
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
       position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
-    enable: false
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
@@ -459,7 +459,7 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics: 104527326
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
