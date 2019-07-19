@@ -3,7 +3,7 @@ title: 一些开源项目收集
 date: 2019-07-12 14:17:05
 tags: "reference"
 ---
-一些开原项目的收集
+一些开源项目的收集
 <!-- more -->
 # [Microsoft/Trill](https://github.com/Microsoft/Trill)  
 <br>
