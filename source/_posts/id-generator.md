@@ -63,7 +63,7 @@ DROP SEQUENCE IdGenerator
             - 典型的问题，和Js的集成需要特殊处理。
 
 
-# 改进的ID池形式【中心化】
+# 改进的ID池形式【需要单例，分布式可以使用Orleans类似框架支持】
 
 1. 每次程序启动后，从Storage（可以是blob、s2、oos、数据库等）中获取上一次的checkPoint，然后从该Checkpoint 向后取一个数字的范围作为IdPool（如10-10000）。将偏移以后的数值作为CheckPoint写入Storage。
 2. 当需要获取Id的时候，从IdPool这个范围中取。
