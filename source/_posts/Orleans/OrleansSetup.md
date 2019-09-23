@@ -19,7 +19,7 @@ Orleans 2.1引入了新的Direct Client模式：
 也可以用来在一开始简化部署，简化开发等目的
 核心思想是IClusterClient 要从ISiloHost的依赖注入容器中获取：
 1. .net core 2.x
-    * SiloHost
+``` CSharp
      var silo = new SiloHostBuilder().UseLocalhostClustering()
         .ConfigureApplicationParts(parts =>
             parts.AddApplicationPart(typeof(XxxGrain).Assembly).WithReferences()
@@ -48,11 +48,11 @@ Orleans 2.1引入了新的Direct Client模式：
             .UseStartup<Startup>()
             .Build()
             .RunAsync();
-    ```
-    一般Silo可以在启动时初始化，或者作为.net Core的HostedService在后台运行，这样可以避免一些配置难以处理
+``` 
+一般Silo可以在启动时初始化，或者作为 .net core的HostedService在后台运行，这样可以避免一些配置难以处理
 
 2. .net core3.0 & Orleans 2.3 
-    ``` CSharp
+``` CSharp
     var host = new HostBuilder()
         .ConfigureWebHost(builder =>
         {
@@ -65,7 +65,7 @@ Orleans 2.1引入了新的Direct Client模式：
         .Build();
 
     await host.StartAsync();
-    ```
+```
 
 主要区别在于3.0中两个HostBuilder和依赖注入的container都变成了一个。
 
@@ -73,8 +73,18 @@ Orleans 2.1引入了新的Direct Client模式：
 地址: https://github.com/OrleansContrib/OrleansDashboard
 一般的配置直接看Readme即可，下面主要介绍一下当HostSelf=false的时候的一些设置
 当HostSelf设置为False的时候，即dashboard应该为你的项目的一部分，而不是自己启动一个监听独立的端口。
-1. 需要在asp.net core的ConfigureServices中 services.AddServicesForSelfHostedDashboard(), 同时注入的services中必须要有GrainFactory, 且该GrainFactory所对应的IClusterClient必须成功连接Silo;
-2. 在Configure方法中添加 app.UseOrleansDashboard(new DashboardOptions { BasePath = "/dashboard" }); 配置，这样dashboard的访问地址为:youDomain:yourPort/dashboard
+1. 需要在asp .net core的ConfigureServices中 
+    ``` CSharp
+    services.AddServicesForSelfHostedDashboard(),
+    ```
+    同时注入的services中必须要有GrainFactory, 且该GrainFactory所对应的IClusterClient必须成功连接Silo。
+ 
+2. 在Configure方法中添加 
+
+    ``` CSharp
+    app.UseOrleansDashboard(new DashboardOptions { BasePath = "/dashboard" });
+    ``` 
+这样dashboard的访问地址为: domain:port/dashboard
 
 
     
