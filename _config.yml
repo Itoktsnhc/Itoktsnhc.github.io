@@ -8,8 +8,8 @@ subtitle:
 description:
 keywords:
 author: itok
-language:
-timezone:
+language: zh-CN
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -83,24 +83,3 @@ deploy:
   branch: master
 
 
-# hexo-graphviz
-graphviz:
-  enable: true
-
-#live 2d
-live2d:
-  enable: false
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  debug: false
-  model:
-    use: live2d-widget-model-shizuku
-  display:
-    position: right
-    width: 150
-    height: 300
-  mobile:
-    show: true
