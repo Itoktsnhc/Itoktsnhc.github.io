@@ -80,6 +80,6 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:Itoktsnhc/Itoktsnhc.github.io.git
-  branch: master
+  branch: gh-pages
 
 
