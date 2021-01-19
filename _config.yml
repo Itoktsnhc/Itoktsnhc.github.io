@@ -9,7 +9,7 @@ description:
 keywords:
 author: itok
 language: zh-CN
-timezone: 
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -80,6 +80,6 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:Itoktsnhc/Itoktsnhc.github.io.git
-  branch: gh-pages
+  branch: master
 
 
